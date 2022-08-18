@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-contact-component',
@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-component.component.css']
 })
 export class ContactComponentComponent implements OnInit {
-
+  // We need to use property binding and the @input annotation in order to let the parent component pass information to the child component.
+  // We decorate the user variable with the @Input annotation to indicate that a parent component can set this property through property binding.
+  @Input() user = {
+    firstName: "default",
+  };
   constructor() { }
 
   ngOnInit(): void {
