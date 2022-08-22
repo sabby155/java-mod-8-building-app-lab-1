@@ -11,6 +11,8 @@ import { SendMessageComponentComponent } from './send-message-component/send-mes
 import { SenderMessageComponentComponent } from './sender-message-component/sender-message-component.component';
 import { UserMessageComponentComponent } from './user-message-component/user-message-component.component';
 import { ContactComponentComponent } from './contact-component/contact-component.component';
+import { FormsModule } from "@angular/forms";
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,11 @@ import { ContactComponentComponent } from './contact-component/contact-component
     SenderMessageComponentComponent,
     UserMessageComponentComponent,
     ContactComponentComponent,
+    HighlightDirective,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

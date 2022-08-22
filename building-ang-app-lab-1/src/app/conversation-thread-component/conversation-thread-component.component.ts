@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Message } from '../message.model';
 
 @Component({
   selector: 'app-conversation-thread-component',
@@ -6,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./conversation-thread-component.component.css']
 })
 export class ConversationThreadComponentComponent implements OnInit {
-  senderMessages = [
+  senderMessages: Message[] = [
     {
-      sender: { firstName: "Ludovic" },
+      sender: { firstName: "Ludovic", isOnline: true },
       text: "Message from Ludovic",
       conversationId: 1,
       sequenceNumber: 0,
@@ -20,7 +21,7 @@ export class ConversationThreadComponentComponent implements OnInit {
       sequenceNumber: 1,
     },
   ];
-  userMessages = [
+  userMessages: Message[] = [
     {
       sender: { firstName: "Aurelie" },
       text: "Message from Aurelie",
