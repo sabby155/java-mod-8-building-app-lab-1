@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoggingService } from '../logging.service';
+import { MessagingDataService } from '../messaging-data.service';
 
 @Component({
   selector: 'app-send-message-component',
@@ -7,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SendMessageComponentComponent implements OnInit {
   messageString: string;
-  
-  constructor() { }
+
+  //Dependency Injection is a mechanism that lets Angular instantiate the target objects for us
+  // declare the loggingSvce variable through the component's constructor
+  constructor(private loggingSvce: LoggingService, private messagingSvce: MessagingDataService) { }
 
   ngOnInit(): void {
+  }
+
+  onSendMessage() {
+    this.loggingSvce.log("Send following message: ");
+    this.loggingSvce.log(this.messageString);
   }
 
 }
